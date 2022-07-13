@@ -22,7 +22,7 @@
 
   <!-- BEGIN local customization: display repository link above the fold -->
   <% (@result.external_documents || []).each do |document| %>
-    <% if document['title'] == "Special Collections @ DU" %>
+    <% if document['title'] == "Springfield College Archives &amp; Special Collections" %>
       <h3>Digital Repository</h3>
       <p><a href="<%= document['uri'] %>"><%= @result['title'] %></a></p>
     <% end %>
@@ -100,7 +100,7 @@
     <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('linked_instances'), :p_id => 'linked_instances_list', :p_body => x} %>
   <% end %>
 	<% unless @result.external_documents.blank? %>
-    <% list = @result.external_documents.select{|doc| doc['title'] != "Special Collections @ DU"} %>
+    <% list = @result.external_documents.select{|doc| doc['title'] != "Springfield College Archives &amp; Special Collections"} %>
     <% unless list.blank? %>
       <% x = render partial: 'shared/present_list_external_docs', locals: {:list =>  list, :list_clss => 'external_docs'} %>
       <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('external_docs'), :p_id => 'ext_doc_list', :p_body => x} %>
